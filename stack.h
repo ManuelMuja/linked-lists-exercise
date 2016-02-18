@@ -34,6 +34,7 @@ public:
 	int cnt();
 	int distance(pNodo, pNodo);
 	int getLenght();
+	int setLenght();
 	int incLenght();
 	int decLenght();
 };
