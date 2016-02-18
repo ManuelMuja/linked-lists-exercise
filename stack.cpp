@@ -120,20 +120,18 @@ int Stack::dropn ( int n ) {
  *  stackEMPTY
  *
  */
-nodo* stackEMPTY ( nodo *p ) {
-	int status=0;
-	
-	nodo *q;
+int Stack::empty ( ) {
+	pStack t;
 	
 	/* scorri lista */
-	while ( p != NULL ) {
-		q = p;
-		p = p->next;
-		status++;
-		delete q;
+	while ( this->getTop() != NULL ) {
+		t = this;
+		top = top->getNext();
+		decLenght();
+		delete t;
 	} // scorri lista
 	
-	return p;
+	return lenght;
 } // stackEMPTY
 
 
@@ -142,18 +140,19 @@ nodo* stackEMPTY ( nodo *p ) {
  *  stackSWAP
  *
  */
-nodo* stackSWAP ( nodo * p ) {
-	nodo * q;
+void Stack::swap ( ) {
+	pStack p = this;
+	pNodo t = p->top;
+	pNodo q;
 	
-	if ( p!=NULL) {
-		q = p->next;
+	if ( t != NULL ) {
+		q = t->getNext();
 		if ( q!=NULL) {
-			p->next = q->next;
-			q->next = p;
+			t->setNext( q->getNext() );
+			q->setNext( t );
 		}		
 	}
 	
-	return q;
 } // stackSWAP
 
 
@@ -162,16 +161,17 @@ nodo* stackSWAP ( nodo * p ) {
  *  stackSUM
  *
  */
-nodo* stackSUM ( nodo * p ) {
+TIPO_DATO Stack::sum ( ) {
+	pStack p = this;
+	pNodo t = p->top;
 	
-	nodo* t = p;
-	p = p->next;
+	p->top = p->top->getNext();
 	if ( p!=NULL)
-		p->dato = t->dato + p->dato;
-	
+		p->getTop()->setDato( t->getDato() + p->getTop()->getDato() );
+	p->decLenght();	
 	delete t;
 	
-	return p;
+	return top->getDato();
 } // stackSUM
 
 
@@ -180,17 +180,17 @@ nodo* stackSUM ( nodo * p ) {
  *  stackSUB
  *
  */
-nodo* stackSUB ( nodo * p ) {
-	
-	nodo* t = p;
-	p = p->next;
-	if ( p!=NULL)
-		p->dato = t->dato - p->dato;
-	
-	delete t;
-	
-	return p;
-} // stackSUB
+//nodo* stackSUB ( nodo * p ) {
+//	
+//	nodo* t = p;
+//	p = p->next;
+//	if ( p!=NULL)
+//		p->dato = t->dato - p->dato;
+//	
+//	delete t;
+//	
+//	return p;
+//} // stackSUB
 
 
 
@@ -198,17 +198,17 @@ nodo* stackSUB ( nodo * p ) {
  *  stackMUL
  *
  */
-nodo* stackMUL ( nodo * p ) {
-	
-	nodo* t = p;
-	p = p->next;
-	if ( p!=NULL)
-		p->dato = t->dato * p->dato;
-	
-	delete t;
-	
-	return p;
-} // stackMUL
+//nodo* stackMUL ( nodo * p ) {
+//	
+//	nodo* t = p;
+//	p = p->next;
+//	if ( p!=NULL)
+//		p->dato = t->dato * p->dato;
+//	
+//	delete t;
+//	
+//	return p;
+//} // stackMUL
 
 
 
@@ -216,17 +216,17 @@ nodo* stackMUL ( nodo * p ) {
  *  stackDIV
  *
  */
-nodo* stackDIV ( nodo * p ) {
-	
-	nodo* t = p;
-	p = p->next;
-	if ( p!=NULL)
-		p->dato = t->dato / p->dato;
-	
-	delete t;
-	
-	return p;
-} // stackDIV
+//nodo* stackDIV ( nodo * p ) {
+//	
+//	nodo* t = p;
+//	p = p->next;
+//	if ( p!=NULL)
+//		p->dato = t->dato / p->dato;
+//	
+//	delete t;
+//	
+//	return p;
+//} // stackDIV
 
 
 
@@ -234,17 +234,17 @@ nodo* stackDIV ( nodo * p ) {
  *  stackMOD
  *
  */
-nodo* stackMOD ( nodo * p ) {
-	
-	nodo* t = p;
-	p = p->next;
-	if ( p!=NULL)
-		p->dato = t->dato % p->dato;
-	
-	delete t;
-	
-	return p;
-} // stackMOD
+//nodo* stackMOD ( nodo * p ) {
+//	
+//	nodo* t = p;
+//	p = p->next;
+//	if ( p!=NULL)
+//		p->dato = t->dato % p->dato;
+//	
+//	delete t;
+//	
+//	return p;
+//} // stackMOD
 
 
 
@@ -252,22 +252,22 @@ nodo* stackMOD ( nodo * p ) {
  *  stackPOW
  *
  */
-TIPO_DATO pow ( ) {
-	
-	pNodo t = p;
-	p = p->next;
-	
-	
-	if ( p!=NULL) {
-		int espo = t->dato;
-		int base = p->dato;
-		
-		while(--espo) p->dato *= base;
-	}	
-	delete t;
-	
-	return p;
-} // stackPOW
+//TIPO_DATO pow ( ) {
+//	
+//	pNodo t = this;
+//	p = p->next;
+//	
+//	
+//	if ( p!=NULL) {
+//		int espo = t->getDato();
+//		int base = p->getDato();
+//		
+//		while(--espo) p->gatDato() *= base;
+//	}	
+//	delete t;
+//	
+//	return p;
+//} // stackPOW
 
 
 
@@ -275,13 +275,46 @@ TIPO_DATO pow ( ) {
  *  stackDistance
  *
  */
-int distance ( pNodo p, pNodo q ) {
+int Stack::distance ( pNodo p, pNodo q ) {
 	int d = 0;
 	pNodo t=p;
 	
-	for (t->next=p; t->next!=NULL; t=t->next) {
+	for (t->setNext(p); t->getNext()!=NULL; t=t->getNext()) {
 		d++;
 	}
 	
 	return d;
 } // stackDistance
+
+
+
+/*
+ *  getLenght
+ *
+ */
+int Stack::getLenght ( ) {
+
+	return this->lenght;
+} // getLenght
+
+
+
+/*
+ *  decLenght
+ *
+ */
+int Stack::decLenght ( ) {
+
+	return this->lenght--;
+} // decLenght
+
+
+
+/*
+ *  incLenght
+ *
+ */
+int Stack::incLenght ( ) {
+
+	return this->lenght++;
+} // incLenght
