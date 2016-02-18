@@ -253,20 +253,24 @@ TIPO_DATO Stack::div ( ) {
 
 
 /*
- *  stackMOD
+ *  mod
  *
  */
-//nodo* stackMOD ( nodo * p ) {
-//	
-//	nodo* t = p;
-//	p = p->next;
-//	if ( p!=NULL)
-//		p->dato = t->dato % p->dato;
-//	
-//	delete t;
-//	
-//	return p;
-//} // stackMOD
+TIPO_DATO Stack::mod ( ) {
+	pNodo t;
+	TIPO_DATO ret;
+	
+	t = top;								// copy pointer to top of the stack and 
+	setTop( top->getNext() );				// shift pointer to stack
+	
+	if ( top->getNext() != NULL ) {
+		ret = t->getDato() % top->getDato();	// compute result
+		t->setDato( ret );
+		delete t;							// free memory
+	}
+	
+	return ret;
+} // mod
 
 
 
