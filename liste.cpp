@@ -24,6 +24,9 @@ void stackTEST() {
 	
 	printf("\nInit\n");
 	Stack p;
+	pStack pp;
+	
+	pp->setTop( p.getTop() );
 
 	printf("\nPrint:\n");
 	p.print();
@@ -31,6 +34,8 @@ void stackTEST() {
 	int NN=10;
 	while(NN--){
 		p.push(NN);
+		printf("\n%d", NN);
+		printf( "\n%d", p.getTop()->getDato() );
 	}
 	
 	printf("\nstackPRINT:\n");
