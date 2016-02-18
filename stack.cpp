@@ -7,7 +7,7 @@
  *
  */
 
-#include "stdio.h"
+#include "stdio.h"			// NULL
 #include "nodo.h"
 #include "stack.h"
 
@@ -21,6 +21,52 @@ Stack::Stack ( ) {
 	top = NULL;
 	lenght = 0;
 } // constructor
+
+
+
+/*
+ *  getTop
+ *
+ */
+pNodo Stack::getTop ( ) {
+	
+	return top;
+} // constructor
+
+
+
+/*
+ *  setTop
+ *
+ */
+int Stack::setTop ( pNodo t ) {
+	top = t;
+	
+	return lenght;
+} // constructor
+
+
+
+/*
+ *  stackPrint
+ *
+ */
+int Stack::print ( ) {
+	int status=0;
+	
+	if ( this==NULL ) {
+		printf("Stack is empty\n");
+	} else {
+		pNodo q;
+		q = this->getTop();
+		/* scorri lista */
+		for ( q = this->getTop(); q != NULL; q = q->getNext() ) {
+			printf("%d: ", ++status);
+			printf("%d\n", q->getDato());
+		}
+	}
+	return status;
+} // stackPrint
 
 
 
@@ -53,29 +99,6 @@ int Stack::pull ( ) {
 	printf("Err\n");
 	return -1;
 } // stackPull
-
-
-
-/*
- *  stackPrint
- *
- */
-int Stack::print ( ) {
-	int status=0;
-	
-	if ( this==NULL ) {
-		printf("Stack is empty\n");
-	} else {
-		pNodo q;
-		q = this->getTop();
-		/* scorri lista */
-		for ( q = this->getTop(); q != NULL; q = q->getNext() ) {
-			printf("%d: ", ++status);
-			printf("%d\n", q->getDato());
-		}
-	}
-	return status;
-} // stackPrint
 
 
 

@@ -7,11 +7,12 @@
  *
  */
 
+#include "stdio.h"
+
 #include "nodo.h"
 #include "stack.h"
 #include "queue.h"
 #include "liste.h"
-
 
 
 
@@ -86,4 +87,13 @@ void stackTEST() {
 } // stackTEST
 
 
+
+
+/*
+ *  queueTEST
+ *
+ */
+void queueTEST() {
+	
+} // queueTEST
 
