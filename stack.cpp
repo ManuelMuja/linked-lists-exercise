@@ -162,7 +162,6 @@ void Stack::swap ( ) {
  *
  */
 TIPO_DATO Stack::sum ( ) {
-	pStack p;
 	pNodo t;
 	TIPO_DATO a, b, c;
 	
@@ -275,25 +274,26 @@ TIPO_DATO Stack::mod ( ) {
 
 
 /*
- *  stackPOW
+ *  power
  *
  */
-//TIPO_DATO pow ( ) {
-//	
-//	pNodo t = this;
-//	p = p->next;
-//	
-//	
-//	if ( p!=NULL) {
-//		int espo = t->getDato();
-//		int base = p->getDato();
-//		
-//		while(--espo) p->gatDato() *= base;
-//	}	
-//	delete t;
-//	
-//	return p;
-//} // stackPOW
+TIPO_DATO Stack::pow ( ) {
+	pNodo t;
+	TIPO_DATO ret;
+	
+	t = top;								// copy pointer to top of the stack and 
+	setTop( top->getNext() );				// shift pointer to stack
+	
+	if ( top->getNext() != NULL ) {
+		int espo = t->getDato();
+		int base = ret = top->getDato();
+		while (--espo) ret *= base;
+		top->setDato(ret);
+	delete t;
+	}	
+	
+	return ret;
+} // power
 
 
 
