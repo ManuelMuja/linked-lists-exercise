@@ -177,20 +177,27 @@ TIPO_DATO Stack::sum ( ) {
 
 
 /*
- *  stackSUB
+ *  subtract
  *
  */
-//nodo* stackSUB ( nodo * p ) {
-//	
-//	nodo* t = p;
-//	p = p->next;
-//	if ( p!=NULL)
-//		p->dato = t->dato - p->dato;
-//	
-//	delete t;
-//	
-//	return p;
-//} // stackSUB
+int Stack::sub ( ) {
+	pStack p;
+	pNodo t;
+	TIPO_DATO a, b, c;
+	
+	t = top;								// copy pointer to top of the stack and 
+	setTop( top->getNext() );				// shift pointer to stack
+	
+	if ( p!=NULL) {
+		a = t->getDato();
+		b = top->getDato();
+		c = a-b;
+		t->setDato( c );
+		delete t;
+	}
+	
+	return c;
+} // subtract
 
 
 
