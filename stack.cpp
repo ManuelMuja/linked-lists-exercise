@@ -158,29 +158,10 @@ void Stack::swap ( ) {
 
 
 /*
- *  stackSUM
+ *  summ
  *
  */
 TIPO_DATO Stack::sum ( ) {
-	pStack p = this;
-	pNodo t = p->top;
-	
-	p->top = p->top->getNext();
-	if ( p!=NULL)
-		p->getTop()->setDato( t->getDato() + p->getTop()->getDato() );
-	p->decLenght();	
-	delete t;
-	
-	return top->getDato();
-} // stackSUM
-
-
-
-/*
- *  subtract
- *
- */
-int Stack::sub ( ) {
 	pStack p;
 	pNodo t;
 	TIPO_DATO a, b, c;
@@ -188,7 +169,31 @@ int Stack::sub ( ) {
 	t = top;								// copy pointer to top of the stack and 
 	setTop( top->getNext() );				// shift pointer to stack
 	
-	if ( p!=NULL) {
+	if ( top->getNext() != NULL ) {
+		a = t->getDato();
+		b = top->getDato();
+		c = a+b;
+		t->setDato( c );
+		delete t;
+	}
+	
+	return c;
+} // summ
+
+
+
+/*
+ *  subtract
+ *
+ */
+TIPO_DATO Stack::sub ( ) {
+	pNodo t;
+	TIPO_DATO a, b, c;
+	
+	t = top;								// copy pointer to top of the stack and 
+	setTop( top->getNext() );				// shift pointer to stack
+	
+	if ( top->getNext() != NULL ) {
 		a = t->getDato();
 		b = top->getDato();
 		c = a-b;
@@ -202,38 +207,48 @@ int Stack::sub ( ) {
 
 
 /*
- *  stackMUL
+ *  multiply
  *
  */
-//nodo* stackMUL ( nodo * p ) {
-//	
-//	nodo* t = p;
-//	p = p->next;
-//	if ( p!=NULL)
-//		p->dato = t->dato * p->dato;
-//	
-//	delete t;
-//	
-//	return p;
-//} // stackMUL
+TIPO_DATO Stack::mul ( ) {
+	pNodo t;
+	TIPO_DATO a, b, c;
+	
+	t = top;								// copy pointer to top of the stack and 
+	setTop( top->getNext() );				// shift pointer to stack
+	
+	if ( top->getNext() != NULL ) {
+		a = t->getDato();
+		b = top->getDato();
+		c = a*b;							// compute result
+		t->setDato( c );
+		delete t;							// free memory
+	}
+	
+	return c;
+} // multiply
 
 
 
 /*
- *  stackDIV
+ *  divide
  *
  */
-//nodo* stackDIV ( nodo * p ) {
-//	
-//	nodo* t = p;
-//	p = p->next;
-//	if ( p!=NULL)
-//		p->dato = t->dato / p->dato;
-//	
-//	delete t;
-//	
-//	return p;
-//} // stackDIV
+TIPO_DATO Stack::div ( ) {
+	pNodo t;
+	TIPO_DATO ret;
+	
+	t = top;								// copy pointer to top of the stack and 
+	setTop( top->getNext() );				// shift pointer to stack
+	
+	if ( top->getNext() != NULL ) {
+		ret = t->getDato() * top->getDato();	// compute result
+		t->setDato( ret );
+		delete t;							// free memory
+	}
+	
+	return ret;
+} // divide
 
 
 
