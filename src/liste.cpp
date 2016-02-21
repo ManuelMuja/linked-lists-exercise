@@ -29,7 +29,7 @@ void stackTEST() {
 //	pp->setTop( p.getTop() );
 
 	printf("\nPrint:\n");
-	p.print();
+//	p.print();
 
 	int NN=10;
 	while(NN--){
@@ -41,12 +41,11 @@ void stackTEST() {
 	printf("\nstackPRINT:\n");
 	pp->print();
 	
-	printf("\nstackPULL: ");
-	printf("%d\n", pp->pull());
+	printf("\nstackpop: ");
+	printf("%d\n", pp->pop());
 	pp->print();
 	
 	printf("\nstackSUM\n");
-
 	pp->sum();
 	pp->print();
 	
@@ -82,9 +81,11 @@ void stackTEST() {
 	pp->empty();
 	pp->print();
 	
+	printf("\nPush\n");
 	pp->push(2);
 	pp->push(3);
 	pp->print();
+	
 	printf("\nstackPOW\n");
 	pp->pow();
 	pp->print();
