@@ -168,15 +168,14 @@ int Stack::empty ( ) {
  *
  */
 void Stack::swap ( ) {
-	pStack p = this;
-	pNodo t = p->top;
 	pNodo q;
 	
-	if ( t != NULL ) {
-		q = t->getNext();
-		if ( q!=NULL) {
-			t->setNext( q->getNext() );
-			q->setNext( t );
+	if ( top != NULL ) {
+		q = top->getNext();
+		if ( q != NULL) {
+			top->setNext(q->getNext());
+			q->setNext( top );
+			setTop(q);
 		}		
 	}
 	
@@ -268,7 +267,7 @@ TIPO_DATO Stack::div ( ) {
 	setTop( top->getNext() );				// shift pointer to stack
 	
 	if ( top->getNext() != NULL ) {
-		ret = t->getDato() * top->getDato();	// compute result
+		ret = t->getDato() / top->getDato();	// compute result
 		top->setDato( ret );
 		delete t;							// free memory
 	}
