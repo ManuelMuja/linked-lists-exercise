@@ -75,7 +75,7 @@ int Stack::print ( ) {
  *
  */
 int Stack::push ( TIPO_DATO x ) {
-	pNodo p;
+	pNodo p = new Nodo;
 	
 	p->setDato( x );
 	p->setNext( this->getTop() );
@@ -87,18 +87,22 @@ int Stack::push ( TIPO_DATO x ) {
 
 
 /*
- *  stackPull
+ *  stackpop
  *
  */
-int Stack::pull ( ) {
+int Stack::pop ( ) {
 	
 	if ( this->getTop() != NULL ) {
-		return (this->getTop())->getDato();
+		TIPO_DATO ret = (this->getTop())->getDato();
+		pNodo temp = top;
+		setTop(top->getNext());
+		delete temp;
+		return ret;
 	}
 	
 	printf("Err\n");
 	return -1;
-} // stackPull
+} // stackpop
 
 
 

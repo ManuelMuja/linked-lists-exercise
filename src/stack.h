@@ -20,7 +20,7 @@ public:
 	int setTop ( pNodo );
 	int print();
 	int push ( TIPO_DATO );
-	TIPO_DATO pull();
+	TIPO_DATO pop();
 	int drop();
 	int dropn ( int );
 	int empty();
