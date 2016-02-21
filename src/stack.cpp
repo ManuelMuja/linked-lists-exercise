@@ -151,7 +151,7 @@ int Stack::empty ( ) {
 	pStack t;
 	
 	/* scorri lista */
-	while ( this->getTop() != NULL ) {
+	while ( top->getNext() != NULL ) {
 		t = this;
 		top = top->getNext();
 		decLenght();
