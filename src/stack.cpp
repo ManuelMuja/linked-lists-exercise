@@ -54,7 +54,7 @@ int Stack::setTop ( pNodo t ) {
 int Stack::print ( ) {
 	int status=0;
 	
-	if ( this==NULL ) {
+	if ( top->getNext()==NULL ) {
 		printf("Stack is empty\n");
 	} else {
 		pNodo q;
@@ -62,7 +62,7 @@ int Stack::print ( ) {
 		/* scorri lista */
 		for ( q = this->getTop(); q != NULL; q = q->getNext() ) {
 			printf("%d: ", ++status);
-			printf("%d\n", q->getDato());
+			printf("%d, \t %x\n", q->getDato(), q->getNext());
 		}
 	}
 	return status;
@@ -75,10 +75,10 @@ int Stack::print ( ) {
  *
  */
 int Stack::push ( TIPO_DATO x ) {
-	pNodo p = new Nodo;
+	pNodo p = new Nodo ( x, top );
 	
-	p->setDato( x );
-	p->setNext( this->getTop() );
+//	p->setDato( x );
+//	p->setNext( this->getTop() );
 	this->setTop(p);
 	
 	return 0;
@@ -148,12 +148,12 @@ int Stack::dropn ( int n ) {
  *
  */
 int Stack::empty ( ) {
-	pStack t;
+	pNodo t;
 	
 	/* scorri lista */
 	while ( top->getNext() != NULL ) {
-		t = this;
-		top = top->getNext();
+		t = top;
+		setTop(top->getNext());
 		decLenght();
 		delete t;
 	} // scorri lista
@@ -199,7 +199,7 @@ TIPO_DATO Stack::sum ( ) {
 		a = t->getDato();
 		b = top->getDato();
 		c = a+b;
-		t->setDato( c );
+		top->setDato( c );
 		delete t;
 	}
 	
@@ -223,7 +223,7 @@ TIPO_DATO Stack::sub ( ) {
 		a = t->getDato();
 		b = top->getDato();
 		c = a-b;
-		t->setDato( c );
+		top->setDato( c );
 		delete t;
 	}
 	
@@ -247,7 +247,7 @@ TIPO_DATO Stack::mul ( ) {
 		a = t->getDato();
 		b = top->getDato();
 		c = a*b;							// compute result
-		t->setDato( c );
+		top->setDato( c );
 		delete t;							// free memory
 	}
 	
@@ -269,7 +269,7 @@ TIPO_DATO Stack::div ( ) {
 	
 	if ( top->getNext() != NULL ) {
 		ret = t->getDato() * top->getDato();	// compute result
-		t->setDato( ret );
+		top->setDato( ret );
 		delete t;							// free memory
 	}
 	
@@ -291,7 +291,7 @@ TIPO_DATO Stack::mod ( ) {
 	
 	if ( top->getNext() != NULL ) {
 		ret = t->getDato() % top->getDato();	// compute result
-		t->setDato( ret );
+		top->setDato( ret );
 		delete t;							// free memory
 	}
 	
