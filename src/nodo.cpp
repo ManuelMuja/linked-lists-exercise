@@ -41,7 +41,7 @@ Nodo::Nodo ( pNodo n ) {
  *
  */
 Nodo::~Nodo() {
-	delete (this);
+//	delete (this);
 } // destructor
 
 
