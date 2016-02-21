@@ -157,6 +157,10 @@ int Stack::empty ( ) {
 		decLenght();
 		delete t;
 	} // scorri lista
+	t = top;
+	setTop(NULL);
+	decLenght();
+	delete t;
 	
 	return lenght;
 } // stackEMPTY
