@@ -24,70 +24,70 @@ void stackTEST() {
 	
 	printf("\nInit\n");
 	Stack p;
-	pStack pp;
+	pStack pp = new Stack;
 	
-	pp->setTop( p.getTop() );
+//	pp->setTop( p.getTop() );
 
 	printf("\nPrint:\n");
 	p.print();
 
 	int NN=10;
 	while(NN--){
-		p.push(NN);
+		pp->push(NN);
 		printf("\n%d", NN);
-		printf( "\n%d", p.getTop()->getDato() );
+		printf( "\n%d", pp->getTop()->getDato() );
 	}
 	
 	printf("\nstackPRINT:\n");
-	p.print();
+	pp->print();
 	
 	printf("\nstackPULL: ");
-	printf("%d\n", p.pull());
-	p.print();
+	printf("%d\n", pp->pull());
+	pp->print();
 	
 	printf("\nstackSUM\n");
 
-	p.sum();
-	p.print();
+	pp->sum();
+	pp->print();
 	
 	printf("\nstackSUB\n");
-	p.sub();
-	p.print();
+	pp->sub();
+	pp->print();
 	
 	printf("\nstackMUL\n");
-	p.mul();
-	p.print();
+	pp->mul();
+	pp->print();
 	
 	printf("\nstackSWAP\n");
-	p.swap();
-	p.print();
+	pp->swap();
+	pp->print();
 	
 	printf("\nstackDIV\n");
-	p.div();
-	p.print();
+	pp->div();
+	pp->print();
 	
 	printf("\nstackDROP\n");
-	p.drop();
-	p.print();
+	pp->drop();
+	pp->print();
 	
 	printf("\nstackSWAP\n");
-	p.swap();
-	p.print();
+	pp->swap();
+	pp->print();
 	
 	printf("\nstackMOD\n");
-	p.mod();
-	p.print();
+	pp->mod();
+	pp->print();
 	
 	printf("\nstackEMPTY\n");
-	p.empty();
-	p.print();
+	pp->empty();
+	pp->print();
 	
-	p.push(2);
-	p.push(3);
-	p.print();
+	pp->push(2);
+	pp->push(3);
+	pp->print();
 	printf("\nstackPOW\n");
-	p.pow();
-	p.print();
+	pp->pow();
+	pp->print();
 	
 } // stackTEST
 
