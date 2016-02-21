@@ -53,20 +53,20 @@ void stackTEST() {
 	pp->sub();
 	pp->print();
 	
+	printf("\nstackDROP\n");
+	pp->drop();
+	pp->print();
+	
 	printf("\nstackMUL\n");
 	pp->mul();
 	pp->print();
 	
-	printf("\nstackSWAP\n");
-	pp->swap();
-	pp->print();
-	
+//	printf("\nstackSWAP\n");
+//	pp->swap();
+//	pp->print();
+//	
 	printf("\nstackDIV\n");
 	pp->div();
-	pp->print();
-	
-	printf("\nstackDROP\n");
-	pp->drop();
 	pp->print();
 	
 	printf("\nstackSWAP\n");
