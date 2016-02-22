@@ -19,7 +19,10 @@
  *
  */
 void Queue::init() {
-	
+	this->HEAD = NULL;
+	this->TAIL = NULL;
+	this->TEMP = NULL;
+	this->lenght = 0;
 } // init queue
 
 
