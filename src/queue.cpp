@@ -116,6 +116,9 @@ void Queue::push ( pQueue, int position ) {
 TIPO_DATO Queue::pop() {
 	TIPO_DATO x;
 	pNodo pn = this->HEAD;
+	x = pn->getDato();
+	HEAD = HEAD->getNext();
+	delete pn;
 	return x;	
 } // pop head
 
