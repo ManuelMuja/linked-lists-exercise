@@ -69,7 +69,8 @@ void Queue::push ( pQueue ) {
  */
 void Queue::push ( TIPO_DATO data, int position ) {
 	int pos=0;
-	pNodo pn;
+	pNodo pn, pnp;			// puntatori al nodo da estrarre e a quello precedente
+	pNodo t;
 	
 	//
 	if( position==0 ) {
@@ -79,7 +80,6 @@ void Queue::push ( TIPO_DATO data, int position ) {
 		this->lenght++;
 		return;
 	}
-	
 	//
 	if ( position > this->lenght ) {
 		printf("\nWARNING: given position > queue lenght => data appended to tail\n");
@@ -88,13 +88,20 @@ void Queue::push ( TIPO_DATO data, int position ) {
 		this->lenght++;
 		this->isEmpty = false;
 		return;
-	}
-	
-	// 
-	if ( false ) {
-		pos++;
+	} else {
+		t = this->TEMP;
+		this->TEMP = this->HEAD;
+		do {
+			pos++;
+			pnp = TEMP;
+			TEMP = TEMP->getNext();
+		} while ( pos < position );
+		pn = new Nodo (data, this->TEMP);
+		pnp->setNext( pn );
+		this->isEmpty = false;
 		this->lenght++;
-		return;
+		pn = this->TEMP;
+		this->TEMP = t;
 	}
 } // insert value into given position
 
