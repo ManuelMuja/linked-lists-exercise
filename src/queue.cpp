@@ -33,9 +33,18 @@ void Queue::init() {
  * append value to tail
  *
  */
-void Queue::push ( TIPO_DATO data ) {
-	pNodo pn = new Nodo( data, this->TAIL);
-	this->TAIL = pn;
+void Queue::push ( TIPO_DATO d ) {
+	pNodo pn;
+	
+	if ( this->lenght==0 ) {			// if queue is empty
+		new Nodo(d, NULL);
+		this->TAIL = pn;
+		this->HEAD = pn;
+	} else {
+		pn = new Nodo (d, NULL);		// if queue is not empty
+		this->TAIL = pn;
+	}
+	this->lenght++;
 } // append value to tail
 
 
