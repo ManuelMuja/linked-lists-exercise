@@ -113,7 +113,7 @@ void queueTEST() {
 //		printf("%d ", NN);
 	} while (--NN);
 	pq->print();
-	
+
 	printf("\n Push '100' into position '3'\n");
 	pq->push(100, 3);
 	pq->print();
