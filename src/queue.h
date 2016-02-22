@@ -14,6 +14,7 @@ private:
 	pNodo TAIL;
 	pNodo TEMP;
 	int lenght;
+	bool isEmpty;
 	
 public:
 	void init();						// init queue

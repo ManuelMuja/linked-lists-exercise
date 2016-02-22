@@ -23,6 +23,7 @@ void Queue::init() {
 	this->TAIL = NULL;
 	this->TEMP = NULL;
 	this->lenght = 0;
+	this->isEmpty = false;
 } // init queue
 
 
