@@ -100,14 +100,13 @@ void stackTEST() {
  *
  */
 void queueTEST() {
-	printf("\nSTACK TEST\n");
 	printf("\nQUEUE TEST\n");
 
 	printf("\n Init \n");
 	pQueue pq = new Queue;
 	pq->init();
 	
-	int NN=10;
+	int NN=5;
 	printf("\n Push \n");
 	do {
 		pq->push(NN);
@@ -117,15 +116,13 @@ void queueTEST() {
 	
 	printf("\n Push '100' into position '3'\n");
 	pq->push(100, 3);
-	pq->print(2, 5);
+	pq->print();
 	
 	printf("\n Pop:\t%d\n",
 		   pq->pop()
 	);
 	pq->print();
 	
-	printf("\n Pop from position 5:\t%d\n",
-		   pq->pop ( 5 )
 	int pos=2;
 	printf("\n Pop from position %d:\t%d\n",
 		   pos, pq->pop ( pos )
