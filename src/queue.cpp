@@ -73,6 +73,7 @@ void Queue::push ( TIPO_DATO data, int position ) {
 	if( position==0 ) {
 		this->HEAD = pn;
 		pn = new Nodo (data, NULL);
+		this->lenght++;
 		return;
 	}
 	
@@ -81,11 +82,15 @@ void Queue::push ( TIPO_DATO data, int position ) {
 		printf("\nWARNING: given position > queue lenght => data appended to tail\n");
 		pn = new Nodo (data, this->TAIL);
 		this->TAIL;
+		this->lenght++;
+		return;
 	}
 	
 	// 
 	if ( false ) {
-		
+		pos++;
+		this->lenght++;
+		return;
 	}
 } // insert value into given position
 
@@ -109,7 +114,7 @@ void Queue::push ( pQueue, int position ) {
  */
 TIPO_DATO Queue::pop() {
 	TIPO_DATO x;
-	
+	pNodo pn = this->HEAD;
 	return x;	
 } // pop head
 
