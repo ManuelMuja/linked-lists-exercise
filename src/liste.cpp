@@ -110,7 +110,7 @@ void queueTEST() {
 	printf("\n Push \n");
 	do {
 		pq->push(NN);
-//		printf("%d\n", NN);
+//		printf("%d ", NN);
 	} while (--NN);
 	pq->print();
 	
