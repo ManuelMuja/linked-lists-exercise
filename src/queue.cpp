@@ -37,11 +37,12 @@ void Queue::push ( TIPO_DATO d ) {
 	pNodo pn;
 	
 	if ( this->lenght==0 ) {			// if queue is empty
-		new Nodo(d, NULL);
+		pn = new Nodo(d, NULL);
 		this->TAIL = pn;
 		this->HEAD = pn;
 	} else {
 		pn = new Nodo (d, NULL);		// if queue is not empty
+		this->TAIL->setNext(pn);
 		this->TAIL = pn;
 	}
 	this->lenght++;
