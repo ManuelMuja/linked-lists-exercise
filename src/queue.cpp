@@ -56,7 +56,27 @@ void Queue::push ( pQueue ) {
  *
  */
 void Queue::push ( TIPO_DATO data, int position ) {
+	int pos=0;
+	pNodo pn;
 	
+	//
+	if( position==0 ) {
+		this->HEAD = pn;
+		pn = new Nodo (data, NULL);
+		return;
+	}
+	
+	//
+	if ( position > this->lenght ) {
+		printf("\nWARNING: given position > queue lenght => data appended to tail\n");
+		pn = new Nodo (data, this->TAIL);
+		this->TAIL;
+	}
+	
+	// 
+	if ( false ) {
+		
+	}
 } // insert value into given position
 
 
