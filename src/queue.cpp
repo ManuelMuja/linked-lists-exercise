@@ -170,7 +170,6 @@ TIPO_DATO Queue::pop ( int position ) {
 			if ( pos > 1 ) pnp = TEMP;			
 		}	
 		this->TEMP = t;
-		delete pn;
 		
 		if (TEMP==HEAD) {
 			HEAD=HEAD->getNext();
