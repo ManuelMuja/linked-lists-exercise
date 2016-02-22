@@ -125,6 +125,9 @@ void queueTEST() {
 	
 	printf("\n Pop from position 5:\t%d\n",
 		   pq->pop ( 5 )
+	int pos=2;
+	printf("\n Pop from position %d:\t%d\n",
+		   pos, pq->pop ( pos )
 	);
 	pq->print();
 	
