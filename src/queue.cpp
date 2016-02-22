@@ -159,6 +159,7 @@ TIPO_DATO Queue::pop ( int position ) {
 		printf("WARNING: given position >= lenght of queue --> returning last element");
 		x = TAIL->getDato();
 	} else {
+		pnp=HEAD;
 		for ( TEMP=HEAD; TEMP!=NULL ; TEMP=TEMP->getNext() ) {	// scorre la lista
 			if ( pos++ == position ) {							// per trovare la posizione giusta
 				x = TEMP->getDato();
