@@ -45,7 +45,7 @@ void Queue::push ( TIPO_DATO data ) {
  *
  */
 void Queue::push ( pQueue ) {
-	
+
 } // append queue
 
 
