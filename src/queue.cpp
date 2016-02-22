@@ -185,7 +185,9 @@ void Queue::shift ( int steps ) {
  *
  */
 void Queue::print() {
-	
+	for ( TEMP=HEAD; TEMP!=NULL; TEMP=TEMP->getNext() ) {
+		printf( "%d\n", TEMP->getDato() );
+	}
 } // print whole queue
  
 
