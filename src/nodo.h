@@ -29,4 +29,12 @@ public:
 }; // nodo
 
 
+class NodoConPrec : public Nodo {
+private:
+	Nodo* prec;
+public:
+	Nodo* getPrec();
+	int setPrec( Nodo* );
+}; // NodoConPrec
+
 typedef Nodo* pNodo;
