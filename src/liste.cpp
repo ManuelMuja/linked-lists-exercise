@@ -101,6 +101,7 @@ void stackTEST() {
  */
 void queueTEST() {
 	printf("\nSTACK TEST\n");
+	printf("\nQUEUE TEST\n");
 
 	printf("\n Init \n");
 	pQueue pq = new Queue;
