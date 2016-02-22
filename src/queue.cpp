@@ -239,8 +239,12 @@ void Queue::shift ( int steps ) {
  */
 void Queue::print() {
 	pNodo t = this->TEMP;
+	if (this->isEmpty) {
+		printf("Queue is empty\n");
+	}
+	int pos = 0;
 	for ( TEMP=HEAD; TEMP!=NULL; TEMP=TEMP->getNext() ) {
-		printf( "%d\n", TEMP->getDato() );
+		printf( "%d:\t%d\n", pos++, TEMP->getDato() );
 	}
 	this->TEMP = t;
 } // print whole queue
@@ -262,7 +266,7 @@ void Queue::print ( int beg, int end ) {
 		pos++;
 	}
 	while ( pos>=beg && pos<=end && pos<lenght && TEMP!=NULL) {
-		printf( "%d\n", TEMP->getDato() );
+		printf( "%d:\t%d\n", pos, TEMP->getDato() );
 		this->TEMP = this->TEMP->getNext();
 		pos++;
 	}
