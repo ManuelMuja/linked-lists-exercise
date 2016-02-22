@@ -118,16 +118,19 @@ void queueTEST() {
 	pq->push(100, 3);
 	pq->print(2, 5);
 	
-//	printf("\n Pop:\t%d\n",
-//		   pq->pop()
-//	);
+	printf("\n Pop:\t%d\n",
+		   pq->pop()
+	);
+	pq->print();
 	
-//	printf("\n Pop from position 5:\t%d\n",
-//		   pq->pop ( 5 )
-//	);
-
+	printf("\n Pop from position 5:\t%d\n",
+		   pq->pop ( 5 )
+	);
+	pq->print();
+	
 	printf("\n Empty \n");
 	pq-> empty();
+	pq->print();
 	
 	printf("\n\n\n");
 } // queueTEST
