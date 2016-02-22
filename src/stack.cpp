@@ -48,25 +48,25 @@ int Stack::setTop ( pNodo t ) {
 
 
 /*
- *  stackPrint
+ *  print
  *
  */
 int Stack::print ( ) {
 	int status=0;
 	
-	if ( top->getNext()==NULL ) {
+	if ( top==NULL ) {
 		printf("Stack is empty\n");
 	} else {
 		pNodo q;
 		q = this->getTop();
 		/* scorri lista */
 		for ( q = this->getTop(); q != NULL; q = q->getNext() ) {
-			printf("%d: ", ++status);
-			printf("%d, \t %x\n", q->getDato(), q->getNext());
+			printf("%d:\t%x:\t", ++status, &q);
+			printf("%d,\t%x\n", q->getDato(), q->getNext());
 		}
 	}
 	return status;
-} // stackPrint
+} // print
 
 
 
@@ -317,7 +317,7 @@ TIPO_DATO Stack::pow ( ) {
 	if ( top->getNext() != NULL ) {
 		int espo = t->getDato();
 		int base = ret = top->getDato();
-		while (--espo) ret *= base;
+		while (espo--) ret *= base;
 		top->setDato(ret);
 	delete t;
 	}	
