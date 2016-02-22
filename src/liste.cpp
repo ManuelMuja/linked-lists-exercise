@@ -31,10 +31,11 @@ void stackTEST() {
 	printf("\nPrint:\n");
 //	p.print();
 
+	printf("\nPush\n");
 	int NN=10;
 	while(NN--){
 		pp->push(NN);
-		printf("\n%d", NN);
+//		printf("\n%d", NN);
 		printf( "\n%d", pp->getTop()->getDato() );
 	}
 	
