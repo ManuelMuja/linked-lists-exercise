@@ -45,6 +45,7 @@ void Queue::push ( TIPO_DATO d ) {
 		this->TAIL->setNext(pn);
 		this->TAIL = pn;
 	}
+	this->isEmpty = false;
 	this->lenght++;
 } // append value to tail
 
