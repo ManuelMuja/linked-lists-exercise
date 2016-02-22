@@ -188,9 +188,11 @@ void Queue::shift ( int steps ) {
  *
  */
 void Queue::print() {
+	pNodo t = this->TEMP;
 	for ( TEMP=HEAD; TEMP!=NULL; TEMP=TEMP->getNext() ) {
 		printf( "%d\n", TEMP->getDato() );
 	}
+	this->TEMP = t;
 } // print whole queue
  
 
