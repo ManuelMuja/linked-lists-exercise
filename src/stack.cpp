@@ -61,7 +61,7 @@ int Stack::print ( ) {
 		q = this->getTop();
 		/* scorri lista */
 		for ( q = this->getTop(); q != NULL; q = q->getNext() ) {
-			printf("%d:\t%x:\t", ++status, &q);
+			printf("%d:\t%x:\t", ++status, &(*q));
 			printf("%d,\t%x\n", q->getDato(), q->getNext());
 		}
 	}
@@ -310,17 +310,20 @@ TIPO_DATO Stack::mod ( ) {
 TIPO_DATO Stack::pow ( ) {
 	pNodo t;
 	TIPO_DATO ret;
+	TIPO_DATO base;
+	int espo;
 	
-	t = top;								// copy pointer to top of the stack and 
-	setTop( top->getNext() );				// shift pointer to stack
-	
-	if ( top->getNext() != NULL ) {
-		int espo = t->getDato();
-		int base = ret = top->getDato();
-		while (espo--) ret *= base;
+	if ( top->getNext() != NULL ) {	
+		t = top;								// copy pointer to top of the stack and 
+		setTop( top->getNext() );				// shift pointer to stack
+		//	top = top->getNext();
+//		ret = top->getDato();
+		espo = t->getDato();
+		base = ret = top->getDato();
+		while (--espo) ret *= base;
 		top->setDato(ret);
-	delete t;
-	}	
+		delete t;
+	} // 
 	
 	return ret;
 } // power
