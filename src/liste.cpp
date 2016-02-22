@@ -21,15 +21,13 @@
  *
  */
 void stackTEST() {
-	
+	printf("\nSTACK TEST\n");
 	printf("\nInit\n");
 	Stack p;
 	pStack pp = new Stack;
 	
-//	pp->setTop( p.getTop() );
-
-	printf("\nPrint:\n");
-//	p.print();
+//	printf("\nPrint:\n");
+	pp->print();
 
 	printf("\nPush\n");
 	int NN=10;
@@ -101,6 +99,28 @@ void stackTEST() {
  *
  */
 void queueTEST() {
+	printf("\nSTACK TEST\n");
+	printf("\nInit\n");
+	pQueue pq = new Queue;
+	
+	printf("\n Init \n");
+	pq->init();
+	
+	int NN=10;
+	printf("\n Push \n");
+	do pq->push(NN); while (--NN);
+	
+	printf("\n Push '100' into position '3' \n");
+	pq-> push ( 100, 3 );
+	
+	printf("\n Pop \n");
+	pq-> pop();
+	
+	printf("\n Pop from position 5\n");
+	pq-> pop ( 5 );
+
+	printf("\n Empty \n");
+	pq-> empty();
 	
 } // queueTEST
 
