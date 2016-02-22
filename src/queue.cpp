@@ -203,7 +203,21 @@ void Queue::print() {
  *
  */
 void Queue::print ( int beg, int end ) {
+	pNodo t = this->TEMP;
+	this->TEMP=HEAD;
+	int pos = 0;
+
+	while ( pos<beg && pos<lenght && TEMP!=NULL) {
+		this->TEMP = this->TEMP->getNext();
+		pos++;
+	}
+	while ( pos>=beg && pos<=end && pos<lenght && TEMP!=NULL) {
+		printf( "%d\n", TEMP->getDato() );
+		this->TEMP = this->TEMP->getNext();
+		pos++;
+	}
 	
+	this->TEMP = t;	
 } // print from 'beg' to 'end'
  
 
