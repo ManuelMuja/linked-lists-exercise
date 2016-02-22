@@ -74,6 +74,7 @@ void Queue::push ( TIPO_DATO data, int position ) {
 	if( position==0 ) {
 		this->HEAD = pn;
 		pn = new Nodo (data, NULL);
+		this->isEmpty = false;
 		this->lenght++;
 		return;
 	}
@@ -84,6 +85,7 @@ void Queue::push ( TIPO_DATO data, int position ) {
 		pn = new Nodo (data, this->TAIL);
 		this->TAIL;
 		this->lenght++;
+		this->isEmpty = false;
 		return;
 	}
 	
