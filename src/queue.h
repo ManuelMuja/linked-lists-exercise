@@ -12,6 +12,7 @@ class Queue {
 private:
 	pNodo HEAD;
 	pNodo TAIL;
+	pNodo TEMP;
 	int lenght;
 	
 public:
