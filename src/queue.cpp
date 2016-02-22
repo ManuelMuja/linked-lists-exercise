@@ -33,7 +33,8 @@ void Queue::init() {
  *
  */
 void Queue::push ( TIPO_DATO data ) {
-	
+	pNodo pn = new Nodo( data, this->TAIL);
+	this->TAIL = pn;
 } // append value to tail
 
 
