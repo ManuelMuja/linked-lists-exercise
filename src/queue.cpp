@@ -128,6 +128,12 @@ TIPO_DATO Queue::pop() {
 	pNodo pn = this->HEAD;
 	x = pn->getDato();
 	HEAD = HEAD->getNext();
+	this->lenght--;
+	if( this->lenght <= 0 ) this->isEmpty = true;
+	if (this->HEAD==NULL) {
+		this->TAIL = NULL;
+		this->isEmpty = true;
+	}
 	delete pn;
 	return x;	
 } // pop head
@@ -141,8 +147,42 @@ TIPO_DATO Queue::pop() {
  */
 TIPO_DATO Queue::pop ( int position ) {
 	TIPO_DATO x;
+	pNodo pn, pnp;							// puntatori al nodo da estrarre e a quello precedente
+	pNodo t = this->TEMP;					// salva il puntatore temporaneo
+	int pos = 0;
 	
-	return x;
+	if ( isEmpty ) {
+		printf("WARNING: queue is empty => returning 0");
+		x = 0;
+	}
+	if ( position > lenght ) {
+		printf("WARNING: given position >= lenght of queue --> returning last element");
+		x = TAIL->getDato();
+	} else {
+		for ( TEMP=HEAD; TEMP!=NULL ; TEMP=TEMP->getNext() ) {	// scorre la lista
+			if ( pos++ == position ) {							// per trovare la posizione giusta
+				x = TEMP->getDato();
+				pn = TEMP;
+				pnp->setNext( TEMP->getNext() );
+				break;
+			}
+			if ( pos > 1 ) pnp = TEMP;			
+		}	
+		this->TEMP = t;
+		delete pn;
+		
+		if (TEMP==HEAD) {
+			HEAD=HEAD->getNext();
+		}
+		if (TEMP==TAIL) {
+			HEAD=HEAD->getNext();
+		}
+		
+	}
+
+	
+	delete pn;
+	return x;	
 } // pop data from given position
 
 
