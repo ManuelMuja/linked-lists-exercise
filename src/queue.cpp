@@ -7,6 +7,7 @@
  *
  */
 
+#include "stdio.h"			// NULL, printf()
 #include "nodo.h"
 #include "queue.h"
 
