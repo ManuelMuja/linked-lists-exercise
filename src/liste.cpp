@@ -8,12 +8,13 @@
  */
 
 #include "stdio.h"
+#include <iostream>
+#include <ctime>
 
 #include "nodo.h"
 #include "stack.h"
 #include "queue.h"
 #include "liste.h"
-
 
 
 /*
@@ -106,6 +107,9 @@ void queueTEST() {
 	pQueue pq = new Queue;
 	pQueue pq2= new Queue;
 	
+	/* clock start */
+	std::clock_t begin_time0 = std::clock();
+
 	pq->init();
 	pq2->init();
 	
@@ -113,7 +117,7 @@ void queueTEST() {
 	pq2->setName("Seconda Coda\0");
 	
 	
-	int NN=5;
+	int NN=10;
 	printf("\n Push \n");
 	do {
 		pq->push(NN);
@@ -121,8 +125,10 @@ void queueTEST() {
 	} while (--NN);
 	pq->print();
 
-	printf("\n Push '100' into position '3'\n");
-	pq->push(100, 3);
+	printf("\n Push '100' into position '8'\n");
+//	std::clock_t begin_time = std::clock();
+	pq->push(100, 8);
+//	std::cout << "clk: " <<float( std::clock () - begin_time ) << '\n';
 	pq->print();
 	
 	printf("\n Pop:\t%d\n",
@@ -144,7 +150,9 @@ void queueTEST() {
 	pq->push(1);
 	pq->push(2);
 	pq->push(3);
+	std::clock_t begin_time = std::clock();
 	pq2->push(4);
+	std::cout << "clk: " <<float( std::clock () - begin_time ) << '\n';
 	pq2->push(5);
 	pq2->push(6);
 	pq->print();
@@ -168,6 +176,11 @@ void queueTEST() {
 		   );
 	pq->print();
 	
+	
+	/* clock stop */
+	std::cout << float( std::clock () - begin_time0 ) << " clock cicles" << '\n';
+	std::cout << float( std::clock () - begin_time0 ) /  CLOCKS_PER_SEC * 1E3 << "ms" <<'\n';
+
 	printf("\n\n\n");
 } // queueTEST
 
