@@ -192,6 +192,17 @@ TIPO_DATO Queue::pop ( int position ) {
 
 
 /*
+ * TIPO_DATO Queue::peek()
+ * peek head
+ *
+ */
+TIPO_DATO Queue::peek() {
+	
+	return this->HEAD->getDato();
+} // peek head
+
+
+
  * void Queue::setHead ( pNodo newHead )
  * set a new head for the queue
  *
