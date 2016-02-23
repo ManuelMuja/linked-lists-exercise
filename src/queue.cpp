@@ -167,6 +167,7 @@ TIPO_DATO Queue::pop ( int position ) {
 				x = TEMP->getDato();
 				pn = TEMP;
 				pnp->setNext( TEMP->getNext() );
+				lenght--;
 				break;
 			}
 			if ( pos > 1 ) pnp = TEMP;			
