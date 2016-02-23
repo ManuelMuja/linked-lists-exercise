@@ -26,6 +26,8 @@ public:
 	void push ( Queue* );				// append queue
 	void push ( TIPO_DATO data, int position );		// insert value into given position
 	void push ( Queue*, int position );				// TO DO: insert queue
+	void subs ( TIPO_DATO data );		// substiture value in HEAD
+	void subs ( TIPO_DATO data, int position );		// substiture value into given position
 	TIPO_DATO pop();					// pop head
 	TIPO_DATO pop ( int position );		// pop data from given position
 	TIPO_DATO peek();					// same as pop but
