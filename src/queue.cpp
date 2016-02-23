@@ -205,10 +205,8 @@ void Queue::setHead ( pNodo newHead ) {
  *
  */
 void Queue::setTail ( pNodo newTail ) {
-	
 	this->TAIL = newTail;
 } // set a new tail
- 
 
 
 
