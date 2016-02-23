@@ -451,3 +451,28 @@ int Queue::queue2array( TIPO_DATO tdArray[] ) {
 	return pos;
 } // empty queue
 
+
+
+/*
+ * pNodo Queue::revert()
+ * revert queue
+ *
+ */
+pNodo Queue::revert() {
+	if (this->lenght <= 1)
+		return this->HEAD;
+
+	if (this->lenght == 2) {
+		this->TAIL->setNext(HEAD);
+		this->HEAD->setNext(NULL);
+	}
+
+	if (this->lenght == 3) {
+		pNodo t = HEAD->getNext();
+		TAIL->setNext( t );
+		t->setNext( HEAD );
+		HEAD->setNext( NULL );
+	}
+	return HEAD;
+} // revert queue
+
