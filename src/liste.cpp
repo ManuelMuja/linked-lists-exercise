@@ -104,7 +104,14 @@ void queueTEST() {
 
 	printf("\n Init \n");
 	pQueue pq = new Queue;
+	pQueue pq2= new Queue;
+	
 	pq->init();
+	pq2->init();
+	
+	pq->setName("Prima Coda");
+	pq2->setName("Seconda Coda\0");
+	
 	
 	int NN=5;
 	printf("\n Push \n");
