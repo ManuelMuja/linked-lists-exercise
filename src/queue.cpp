@@ -369,15 +369,16 @@ void Queue::print ( int beg, int end ) {
  */
 void Queue::empty() {
 	pNodo pn;
-	while ( HEAD < TAIL ) {
+	while ( HEAD != NULL ) {
 		pn = HEAD;
 		HEAD = HEAD->getNext();
 		delete pn;
 		lenght--;
 	}
-	HEAD=NULL;
+//	HEAD=NULL;
+	delete TAIL;
 	TAIL=NULL;
-	lenght=0;
+//	lenght=0;
 	isEmpty=true;
 } // empty queue
 
