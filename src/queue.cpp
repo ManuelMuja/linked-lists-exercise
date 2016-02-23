@@ -183,7 +183,7 @@ TIPO_DATO Queue::pop ( int position ) {
 		}
 		
 	}
-
+	
 	
 	delete pn;
 	return x;	
@@ -302,8 +302,8 @@ int Queue::getLenght( ) {
 
 
 /*
- * void Queue::setLenght ( int newLenght )
- * set a new lenght for the queue
+ * void Queue::setName ( char* sName )
+ * set a new name for the queue
  *
  */
 void Queue::setName ( char* sName ) {
@@ -319,8 +319,8 @@ void Queue::setName ( char* sName ) {
 
 
 /*
- * int Queue::getLenght( )
- * set a new tail
+ * int Queue::getName( char* sName )
+ * get queue's name
  *
  */
 int Queue::getName( char* sName ) {
