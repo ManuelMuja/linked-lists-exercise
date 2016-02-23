@@ -156,6 +156,17 @@ void queueTEST() {
 	printf("\n Pushing another number in \"q\" \n");
 	pq->push(18);
 	pq->print();
+
+	printf("\n Peek top:\t%d\n",
+		   pq->peek()
+		   );
+	pq->print();
+	
+	pos=4;
+	printf("\n Peek from position %d:\t%d\n",
+		   pos, pq->peek ( pos )
+		   );
+	pq->print();
 	
 	printf("\n\n\n");
 } // queueTEST
