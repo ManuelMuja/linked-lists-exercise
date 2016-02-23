@@ -427,3 +427,27 @@ void Queue::empty() {
 	isEmpty=true;
 } // empty queue
 
+
+
+/*
+ * int Queue::makeArray( TIPO_DATO* tdArray )
+ * empty queue
+ *
+ */
+int Queue::queue2array( TIPO_DATO tdArray[] ) {
+	pNodo t = this->TEMP;
+	int pos = 0;
+	
+	if (this->isEmpty) {
+		printf("Queue is empty\n");
+		return 0;
+	}
+	
+	for ( TEMP=HEAD; TEMP!=NULL; TEMP=TEMP->getNext() ) {
+		tdArray[pos++] = TEMP->getDato();
+	}
+	this->TEMP = t;
+	
+	return pos;
+} // empty queue
+
