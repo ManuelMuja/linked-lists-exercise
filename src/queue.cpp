@@ -283,6 +283,7 @@ void Queue::shift ( int steps ) {
  *
  */
 void Queue::print() {
+	printf("%s\n", this->name);
 	pNodo t = this->TEMP;
 	if (this->isEmpty) {
 		printf("Queue is empty\n");
@@ -305,6 +306,8 @@ void Queue::print ( int beg, int end ) {
 	pNodo t = this->TEMP;
 	this->TEMP=HEAD;
 	int pos = 0;
+
+	printf("%s\n", this->name);
 
 	while ( pos<beg && pos<lenght && TEMP!=NULL) {
 		this->TEMP = this->TEMP->getNext();
