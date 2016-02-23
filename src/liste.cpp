@@ -137,7 +137,21 @@ void queueTEST() {
 	pq->print();
 	
 	printf("\n Empty \n");
-	pq-> empty();
+	pq->empty();
+	pq->print();
+	
+	printf("\n Pushing some number in two queues \n");
+	pq->push(1);
+	pq->push(2);
+	pq->push(3);
+	pq2->push(4);
+	pq2->push(5);
+	pq2->push(6);
+	pq->print();
+	pq2->print();
+	
+	printf("\n Pushing \"q2\" in \"q\" \n");
+	pq->push(pq2);
 	pq->print();
 	
 	printf("\n\n\n");
