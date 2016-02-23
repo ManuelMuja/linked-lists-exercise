@@ -233,6 +233,29 @@ pNodo Queue::getTail ( ) {
 } // get tail
 
 
+
+/*
+ * void Queue::setLenght ( int newLenght )
+ * set a new lenght for the queue
+ *
+ */
+void Queue::setLenght ( int newLenght ) {
+	this->lenght = newLenght;
+} // set a new lenght for this queue
+
+
+
+/*
+ * int Queue::getLenght( )
+ * set a new tail
+ *
+ */
+int Queue::getLenght( ) {
+	return this->lenght;
+} // get lenght of this queue
+
+
+
 /*
  * void Queue::shift()
  * shift by one step
