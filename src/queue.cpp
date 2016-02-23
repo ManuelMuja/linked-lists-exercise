@@ -256,6 +256,42 @@ int Queue::getLenght( ) {
 
 
 /*
+ * void Queue::setLenght ( int newLenght )
+ * set a new lenght for the queue
+ *
+ */
+void Queue::setName ( char* sName ) {
+	int cntChar=0;
+	char c;
+	do {
+		c = sName[cntChar];
+		this->name[cntChar] = c;
+		cntChar++;
+	} while ( c != '\0' );
+} // set a new name for this queue
+
+
+
+/*
+ * int Queue::getLenght( )
+ * set a new tail
+ *
+ */
+int Queue::getName( char* sName ) {
+	int cntChar=0;
+	char c;
+	do {
+		c = this->name[cntChar];
+		sName[cntChar] = c;
+		cntChar++;
+	} while ( c != '\0' );
+	
+	return cntChar;
+} // get name of this queue
+
+
+
+/*
  * void Queue::shift()
  * shift by one step
  *
