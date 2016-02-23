@@ -7,7 +7,8 @@
  *
  */
 
-#define MAX_CHARS_PER_WORD 16
+#define MAX_WORD_LENGTH 16
+#define MAX_ARRAY_LENGTH 1024
 
 class Queue {
 	
@@ -17,7 +18,7 @@ private:
 	pNodo TEMP;
 	int lenght;
 	bool isEmpty;
-	char name[MAX_CHARS_PER_WORD];
+	char name[MAX_WORD_LENGTH];
 	
 public:
 	void init();						// init queue
