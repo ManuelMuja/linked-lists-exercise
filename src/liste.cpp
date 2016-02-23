@@ -176,6 +176,19 @@ void queueTEST() {
 		   );
 	pq->print();
 	
+	TIPO_DATO tdA[MAX_ARRAY_LENGTH];
+	printf("\n Put queue into array: %d \n",
+		   pq->queue2array(tdA)
+	);
+	printf("Array: [");
+	for (int i=0; i < pq->getLenght(); i++) {
+		printf("%d", tdA[i]);
+		if (i==pq->getLenght()-1) {
+			printf("]\n");
+		} else {
+			printf(", ");
+		}
+	}
 	
 	/* clock stop */
 	std::cout << float( std::clock () - begin_time0 ) << " clock cicles" << '\n';
