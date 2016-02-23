@@ -24,6 +24,7 @@ void Queue::init() {
 	this->TEMP = NULL;
 	this->lenght = 0;
 	this->isEmpty = true;
+	this->name[1]='\0';
 } // init queue
 
 
