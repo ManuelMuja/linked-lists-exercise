@@ -45,6 +45,7 @@ public:
 	void print();						// print whole queue
 	void print ( int beg, int end );	// print from 'beg' to 'end'
 	void empty();						// NO GOOD: empty queue
+	int queue2array( TIPO_DATO [] );	// put queue into array
 }; // Queue
 
 typedef Queue* pQueue;
