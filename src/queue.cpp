@@ -203,6 +203,39 @@ TIPO_DATO Queue::peek() {
 
 
 
+/*
+ * void TIPO_DATO Queue::peek ( int position )
+ * peek data from given position
+ *
+ */
+TIPO_DATO Queue::peek ( int position ) {
+	TIPO_DATO x;
+	pNodo t = this->TEMP;					// salva il puntatore temporaneo
+	int pos = 0;
+	
+	if ( isEmpty ) {
+		printf("WARNING: queue is empty => returning 0");
+		x = 0;
+	}
+	if ( position > lenght ) {
+		printf("WARNING: given position >= lenght of queue --> returning last element");
+		x = TAIL->getDato();
+	} else {
+		for ( TEMP=HEAD; TEMP!=NULL ; TEMP=TEMP->getNext() ) {	// scorre la lista
+			if ( pos++ == position ) {							// per trovare la posizione giusta
+				x = TEMP->getDato();
+				break;
+			}
+		}	
+		this->TEMP = t;
+	}
+	
+	return x;	
+} // peek data from given position
+
+
+
+/*
  * void Queue::setHead ( pNodo newHead )
  * set a new head for the queue
  *
