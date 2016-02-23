@@ -194,9 +194,9 @@ TIPO_DATO Queue::pop ( int position ) {
  *
  */
 void Queue::setHead ( pNodo newHead ) {
-	
+	this->HEAD = newHead;
 } // set a new head for the queue
- 
+
 
 
 /*
@@ -206,6 +206,7 @@ void Queue::setHead ( pNodo newHead ) {
  */
 void Queue::setTail ( pNodo newTail ) {
 	
+	this->TAIL = newTail;
 } // set a new tail
  
 
