@@ -56,8 +56,9 @@ void Queue::push ( TIPO_DATO d ) {
  * append queue
  *
  */
-void Queue::push ( pQueue ) {
-
+void Queue::push ( pQueue otherQueue) {
+	this->TAIL->setNext( otherQueue->getHead() );
+	this->setLenght( this->lenght + otherQueue->getLenght() );
 } // append queue
 
 
