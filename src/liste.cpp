@@ -153,6 +153,9 @@ void queueTEST() {
 	printf("\n Pushing \"q2\" in \"q\" \n");
 	pq->push(pq2);
 	pq->print();
+	printf("\n Pushing another number in \"q\" \n");
+	pq->push(18);
+	pq->print();
 	
 	printf("\n\n\n");
 } // queueTEST
