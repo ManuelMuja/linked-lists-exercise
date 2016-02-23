@@ -211,6 +211,28 @@ void Queue::setTail ( pNodo newTail ) {
  
 
 
+
+/*
+ * pNodo Queue::getHead ( )
+ * get head
+ *
+ */
+pNodo Queue::getHead ( ) {
+	return HEAD;
+} // get head 
+
+
+
+/*
+ * pNodo Queue::getTail ( )
+ * get tail
+ *
+ */
+pNodo Queue::getTail ( ) {
+	return TAIL;
+} // get tail
+
+
 /*
  * void Queue::shift()
  * shift by one step
