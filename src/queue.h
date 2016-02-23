@@ -39,7 +39,7 @@ public:
 	void shift ( int steps );			// TO DO:shift by given steps 
 	void print();						// print whole queue
 	void print ( int beg, int end );	// print from 'beg' to 'end'
-	void empty();						// empty queue
+	void empty();						// NO GOOD: empty queue
 }; // Queue
 
 typedef Queue* pQueue;
