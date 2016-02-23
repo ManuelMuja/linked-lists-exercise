@@ -340,6 +340,7 @@ void Queue::empty() {
 	}
 	HEAD=NULL;
 	TAIL=NULL;
+	lenght=0;
 	isEmpty=true;
 } // empty queue
 
