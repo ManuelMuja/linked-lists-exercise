@@ -27,6 +27,8 @@ public:
 	void push ( Queue*, int position );				// TO DO: insert queue
 	TIPO_DATO pop();					// pop head
 	TIPO_DATO pop ( int position );		// pop data from given position
+	TIPO_DATO peek();					// same as pop but
+	TIPO_DATO peek ( int position );	// does not modifie the queue
 	void setHead ( pNodo newHead );		// set new head for this queue
 	void setTail ( pNodo newTail );		// set new tail
 	void setLenght ( int newLenght );	// set new lenght
