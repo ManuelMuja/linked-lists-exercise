@@ -88,7 +88,7 @@ void Queue::push ( TIPO_DATO data, int position ) {
 	}
 	//
 	if ( position > this->lenght ) {
-		printf("\nWARNING: given position > queue lenght => data appended to tail\n");
+		cout<<"\nWARNING: given position > queue lenght => data appended to tail\n";
 		pn = new Nodo (data, this->TAIL);
 		this->TAIL;
 		this->lenght++;
@@ -158,11 +158,11 @@ TIPO_DATO Queue::pop ( int position ) {
 	int pos = 0;
 	
 	if ( isEmpty ) {
-		printf("WARNING: queue is empty => returning 0");
+		cout<<"WARNING: queue is empty => returning 0\n";
 		x = 0;
 	}
 	if ( position > lenght ) {
-		printf("WARNING: given position >= lenght of queue --> returning last element");
+		cout<<"WARNING: given position >= lenght of queue --> returning last element/n";
 		x = TAIL->getDato();
 	} else {
 		pnp=HEAD;
@@ -217,11 +217,11 @@ TIPO_DATO Queue::peek ( int position ) {
 	int pos = 0;
 	
 	if ( isEmpty ) {
-		printf("WARNING: queue is empty => returning 0");
+		cout<<"WARNING: queue is empty => returning 0"<<endl;
 		x = 0;
 	}
 	if ( position > lenght ) {
-		printf("WARNING: given position >= lenght of queue --> returning last element");
+		cout<<"WARNING: given position >= lenght of queue --> returning last element"<<endl;
 		x = TAIL->getDato();
 	} else {
 		for ( TEMP=HEAD; TEMP!=NULL ; TEMP=TEMP->getNext() ) {	// scorre la lista
@@ -356,14 +356,14 @@ void Queue::shift ( int steps ) {
  *
  */
 void Queue::print() {
-	printf("%s\t\tl: %d\n", this->name, this->lenght);
+	cout<< this->name <<"\t\tl: "<< this->lenght <<endl;
 	pNodo t = this->TEMP;
 	if (this->isEmpty) {
-		printf("Queue is empty\n");
+		cout<<"Queue is empty"<<endl;
 	}
 	int pos = 0;
 	for ( TEMP=HEAD; TEMP!=NULL; TEMP=TEMP->getNext() ) {
-		printf( "%d:\t%d\n", pos++, TEMP->getDato() );
+		cout<< pos++ <<":\t"<< TEMP->getDato() <<endl;
 	}
 	this->TEMP = t;
 } // print whole queue
@@ -380,14 +380,14 @@ void Queue::print ( int beg, int end ) {
 	this->TEMP=HEAD;
 	int pos = 0;
 
-	printf("%s\t\tl: %d\n", this->name, this->lenght);
+	cout<< this->name <<"\t\tl: "<< this->lenght <<endl;
 
 	while ( pos<beg && pos<lenght && TEMP!=NULL) {
 		this->TEMP = this->TEMP->getNext();
 		pos++;
 	}
 	while ( pos>=beg && pos<=end && pos<lenght && TEMP!=NULL) {
-		printf( "%d:\t%d\n", pos, TEMP->getDato() );
+		cout<< pos++ <<":\t"<< TEMP->getDato() <<endl;
 		this->TEMP = this->TEMP->getNext();
 		pos++;
 	}
@@ -429,7 +429,7 @@ int Queue::queue2array( TIPO_DATO tdArray[] ) {
 	int pos = 0;
 	
 	if (this->isEmpty) {
-		printf("Queue is empty\n");
+		cout<<"Queue is empty"<<endl;
 		return 0;
 	}
 	
