@@ -190,6 +190,13 @@ void queueTEST() {
 		}
 	}
 	
+//	while( pq->getLenght() > 4 ) {
+//		pq->pop();
+//	}
+	printf("\n Revert queue \n");
+	pq->setHead( pq->revert() );
+	pq->print();
+
 	/* clock stop */
 	std::cout << float( std::clock () - begin_time0 ) << " clock cicles" << '\n';
 	std::cout << float( std::clock () - begin_time0 ) /  CLOCKS_PER_SEC * 1E3 << "ms" <<'\n';
