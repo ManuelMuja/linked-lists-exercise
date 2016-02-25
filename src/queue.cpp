@@ -7,6 +7,9 @@
  *
  */
 
+#include <iostream>
+using namespace std;		// string, cout, ...
+
 #include "stdio.h"			// NULL, printf()
 #include "nodo.h"
 #include "queue.h"
@@ -302,37 +305,24 @@ int Queue::getLenght( ) {
 
 
 /*
- * void Queue::setName ( char* sName )
+ * void Queue::setName ( string sName )
  * set a new name for the queue
  *
  */
-void Queue::setName ( char* sName ) {
-	int cntChar=0;
-	char c;
-	do {
-		c = sName[cntChar];
-		this->name[cntChar] = c;
-		cntChar++;
-	} while ( c != '\0' );
+void Queue::setName ( string sName ) {
+	this->name = sName;
 } // set a new name for this queue
 
 
 
 /*
- * int Queue::getName( char* sName )
+ * string Queue::getName( )
  * get queue's name
  *
  */
-int Queue::getName( char* sName ) {
-	int cntChar=0;
-	char c;
-	do {
-		c = this->name[cntChar];
-		sName[cntChar] = c;
-		cntChar++;
-	} while ( c != '\0' );
+string Queue::getName( ) {
 	
-	return cntChar;
+	return this->name;
 } // get name of this queue
 
 

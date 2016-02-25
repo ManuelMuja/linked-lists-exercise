@@ -18,7 +18,7 @@ private:
 	pNodo TEMP;
 	int lenght;
 	bool isEmpty;
-	char name[MAX_WORD_LENGTH];
+	std::string name;
 	
 public:
 	void init();						// init queue
@@ -35,11 +35,11 @@ public:
 	void setHead ( pNodo newHead );		// set new head for this queue
 	void setTail ( pNodo newTail );		// set new tail
 	void setLenght ( int newLenght );	// set new lenght
-	void setName ( char* newName );		// set new name
+	void setName ( std::string newName );		// set new name
 	pNodo getHead();					// get pointer to HEAD node of this queue
 	pNodo getTail();					// get pointer to TAIL node
 	int	getLenght();					// get lenght of this queue
-	int	getName(char*);					// get name of this queue
+	std::string getName();					// get name of this queue
 	void shift();						// TO DO: shift by one step
 	void shift ( int steps );			// TO DO:shift by given steps 
 	void print();						// print whole queue
