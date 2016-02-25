@@ -61,8 +61,8 @@ int Stack::print ( ) {
 		q = this->getTop();
 		/* scorri lista */
 		for ( q = this->getTop(); q != NULL; q = q->getNext() ) {
-			printf("%d:\t%x:\t", ++status, &(*q));
-			printf("%d,\t%x\n", q->getDato(), q->getNext());
+			printf( "%d:\t%p:\t", ++status, (q) );
+			printf( "%d,\t%p\n", q->getDato(), q->getNext() );
 		}
 	}
 	return status;
