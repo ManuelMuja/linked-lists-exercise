@@ -113,8 +113,8 @@ void queueTEST() {
 	pq->init();
 	pq2->init();
 	
-	pq->setName("Prima Coda");
-	pq2->setName("Seconda Coda\0");
+	pq->setName( (char*)"Prima Coda" );
+	pq2->setName( (char*)"Seconda Coda\0" );
 	
 	
 	int NN=10;
