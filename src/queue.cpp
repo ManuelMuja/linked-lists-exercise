@@ -459,20 +459,38 @@ int Queue::queue2array( TIPO_DATO tdArray[] ) {
  *
  */
 pNodo Queue::revert() {
+	pNodo t1, t2;
 	if (this->lenght <= 1)
 		return this->HEAD;
-
+	// 0, 1;
 	if (this->lenght == 2) {
-		this->TAIL->setNext(HEAD);
-		this->HEAD->setNext(NULL);
-	}
+		TAIL->setNext(HEAD);
+		HEAD->setNext(NULL);
+		HEAD = TAIL;
+		TAIL = TAIL->getNext();
+	} // 2
 
 	if (this->lenght == 3) {
-		pNodo t = HEAD->getNext();
-		TAIL->setNext( t );
-		t->setNext( HEAD );
+		t1 = HEAD->getNext();
+		TAIL->setNext( t1 );
+		t1->setNext( HEAD );
 		HEAD->setNext( NULL );
-	}
+		HEAD = TAIL;
+		TAIL = TAIL->getNext();
+	} // 3
+
+	if (this->lenght >= 4) {
+		t2 = TAIL;
+		do {
+			for ( t1=HEAD; t1->getNext()!=t2; t1=t1->getNext() );
+			t2->setNext(t1);
+			t2 = t1;
+		} while (t1!=HEAD);
+		HEAD->setNext(NULL);
+		HEAD = TAIL;
+		TAIL = t1;
+	} // 4
+
 	return HEAD;
 } // revert queue
 
